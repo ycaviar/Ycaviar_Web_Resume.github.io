@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yu Zihan | 个人主页</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">主页</a></li>
+                <li><a href="projects.html">项目</a></li>
+                <li><a href="experience.html">经验</a></li>
+                <li><a href="contact.html">联系</a></li>
+                <li><a href="others.html">其他</a></li>
+            </ul>
+            
+            <div class="theme-control-group">
+                <label class="switch">
+                    <input type="checkbox" id="themeToggleCheckbox">
+                    <span class="slider"></span>
+                </label>
+                <span id="themeIcon" class="theme-icon-display">🌙</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="layout-container">
+        
+        <aside class="sidebar">
+            <div class="profile-card">
+                <img src="YZH.jpg" alt="Yu Zihan Avatar" class="avatar">
+                <h3>Yu Zihan</h3>
+                <p class="signature">“代码编织梦想，数据洞察未来”</p>
+                
+                <div class="divider-dashed"></div>
+                <div class="card-middle">
+                    <p class="music-label">🎵 BGM: Cipher</p>
+                    <audio controls loop src="Cipher.mp3" class="music-player">
+                        您的浏览器不支持音频播放。
+                    </audio>
+                </div>
+                
+                <div class="divider-dashed"></div>
+                <div class="card-bottom">
+                    <p>🎓 大连海洋大学</p>
+                    <p>📍 辽宁 · 大连</p>
+                    <p>💻 大数据 24-1</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            
+            <section class="hero-section">
+                <h1 class="hero-title">Hello.<br>I'm Yu Zihan</h1>
+                <p class="hero-subtitle">探索数据与交互设计的边界</p>
+                <button class="scroll-btn" onclick="scrollToContent()">了解一下 ↓</button>
+            </section>
+
+            <div id="fold-content">
+                
+                <section class="stats-grid animate-box">
+                    <div class="content-card stat-card">
+                        <div class="stat-top">完成个人项目</div>
+                        <div class="divider-dashed"></div>
+                        <div class="stat-num">3</div>
+                    </div>
+                    <div class="content-card stat-card">
+                        <div class="stat-top">参与团队项目</div>
+                        <div class="divider-dashed"></div>
+                        <div class="stat-num">4</div>
+                    </div>
+                    <div class="content-card stat-card">
+                        <div class="stat-top">获奖数量</div>
+                        <div class="divider-dashed"></div>
+                        <div class="stat-num">5</div>
+                    </div>
+                </section>
+
+                <div class="section-header animate-box">
+                    <span class="title">我的故事</span><span class="line"></span><span class="number">01</span>
+                </div>
+                
+                <section class="content-card story-card animate-box">
+                    <p>每一次敲击键盘，都是在构建未来的基石。我对编程的热爱始于一次偶然的数据可视化尝试，从此便沉迷于用代码解析世界的奥秘。</p>
+                </section>
+
+                <div class="section-header animate-box">
+                    <span class="title">简历视频</span><span class="line"></span><span class="number">02</span>
+                </div>
+
+                <section class="video-container animate-box">
+                    <video controls src="fulil.mp4" class="video-player">
+                        您的浏览器不支持视频播放。
+                    </video>
+                </section>
+
+                <div class="section-header animate-box">
+                    <span class="title">我的能力</span><span class="line"></span><span class="number">03</span>
+                </div>
+
+                <section class="skills-grid animate-box">
+                    <div class="content-card skill-card">
+                        <span class="skill-icon">🎨</span>
+                        <h3 class="skill-title">UI 设计</h3>
+                        <div class="skill-details">Figma / Sketch<br>界面视觉规范<br>用户体验优化</div>
+                    </div>
+                    <div class="content-card skill-card">
+                        <span class="skill-icon">🌐</span>
+                        <h3 class="skill-title">网页设计</h3>
+                        <div class="skill-details">HTML5 / CSS3<br>Flexbox 布局<br>响应式适配</div>
+                    </div>
+                    <div class="content-card skill-card">
+                        <span class="skill-icon">📊</span>
+                        <h3 class="skill-title">数据分析</h3>
+                        <div class="skill-details">Python / Pandas<br>Matplotlib 可视化<br>SQL 数据库</div>
+                    </div>
+                    <div class="content-card skill-card">
+                        <span class="skill-icon">💻</span>
+                        <h3 class="skill-title">编程基础</h3>
+                        <div class="skill-details">JavaScript (ES6)<br>Git 版本控制<br>算法与数据结构</div>
+                    </div>
+                </section>
+
+                <div class="section-header animate-box">
+                    <span class="title">期望薪资</span><span class="line"></span><span class="number">04</span>
+                </div>
+
+                <section class="salary-grid animate-box">
+                    <div class="content-card salary-card">
+                        <div class="salary-top">
+                            <h3 class="salary-title">兼职 / 实习</h3>
+                        </div>
+                        <div class="divider-dashed" style="margin-top: 5px;"></div>
+                        <div class="salary-bottom">
+                            <span class="salary-range">¥150-200 / 天</span>
+                        </div>
+                    </div>
+                    <div class="content-card salary-card">
+                        <div class="salary-top">
+                            <h3 class="salary-title">全职 (毕业后)</h3>
+                        </div>
+                        <div class="divider-dashed" style="margin-top: 5px;"></div>
+                        <div class="salary-bottom">
+                            <span class="salary-range">¥8k-12k / 月</span>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="section-header animate-box">
+                    <span class="title">我的专业教师</span><span class="line"></span><span class="number">05</span>
+                </div>
+
+                <section class="content-card teacher-card animate-box">
+                    <img src="Mr_zhang.jpg" alt="张海鹏老师" class="teacher-img">
+                    <h3 class="teacher-name">张海鹏老师</h3>
+                    <p class="teacher-quote">“张老师治学严谨，对大数据领域的洞察深刻。在他的指导下，我不仅掌握了扎实的专业技能，更学会了如何用数据的眼光去分析和解决问题。”</p>
+                </section>
+
+                <footer>
+                    <p>© 2025 Yu Zihan | Dalian Ocean University</p>
+                </footer>
+
+            </div> </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // 内置的小脚本：控制平滑滚动
+        function scrollToContent() {
+            const contentDiv = document.getElementById('fold-content');
+            const yOffset = -80; // 偏移量，留出导航栏空间
+            const y = contentDiv.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({top: y, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>

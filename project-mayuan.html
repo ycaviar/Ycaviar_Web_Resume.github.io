@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>马原考试系统 | 项目详情</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="index.html">主页</a></li>
+                <li><a href="projects.html" class="active">项目</a></li>
+                <li><a href="experience.html">经验</a></li>
+                <li><a href="contact.html">联系</a></li>
+                <li><a href="others.html">其他</a></li>
+            </ul>
+            
+            <div class="theme-control-group">
+                <label class="switch">
+                    <input type="checkbox" id="themeToggleCheckbox">
+                    <span class="slider"></span>
+                </label>
+                <span id="themeIcon" class="theme-icon-display">🌙</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="layout-container">
+        
+        <aside class="sidebar">
+            <div class="profile-card">
+                <img src="YZH.jpg" alt="Yu Zihan Avatar" class="avatar">
+                <h3>Yu Zihan</h3>
+                <p class="signature">“代码编织梦想，数据洞察未来”</p>
+                
+                <div class="divider-dashed"></div>
+                
+                <div class="card-middle">
+                    <p class="music-label">🎵 BGM: Cipher</p>
+                    <audio controls loop src="Cipher.mp3" class="music-player"></audio>
+                </div>
+                
+                <div class="divider-dashed"></div>
+                
+                <div class="card-bottom">
+                    <p>🎓 大连海洋大学</p>
+                    <p>📍 辽宁 · 大连</p>
+                    <p>💻 大数据 24-1</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            
+            <div class="glass-detail-card animate-box">
+                
+                <h1 class="detail-title">马原考试系统</h1>
+                <div class="divider-dashed" style="width: 100px; margin: 0 0 30px 0;"></div>
+                <p style="line-height: 1.8; color: var(--text-color); margin-bottom: 20px;">
+                    为马可思主义原理课程开发的在线考核平台。系统包含题库管理、随机抽题、在线答题及自动评分功能。以下展示了系统的核心功能模块。
+                </p>
+
+                <div class="detail-media-container">
+                    <div>
+                        <p style="margin-bottom:5px; font-weight:bold; color:var(--text-light);">1. 随机抽题界面</p>
+                        <img src="马原考试系统抽题.png" alt="抽题界面" class="detail-img">
+                    </div>
+                    <div>
+                        <p style="margin-bottom:5px; font-weight:bold; color:var(--text-light);">2. 试题录入界面</p>
+                        <img src="马原考试系统录入.png" alt="录入界面" class="detail-img">
+                    </div>
+                    <div>
+                        <p style="margin-bottom:5px; font-weight:bold; color:var(--text-light);">3. 学生练习界面</p>
+                        <img src="马原考试系统练习.png" alt="练习界面" class="detail-img">
+                    </div>
+                </div>
+
+                <div class="divider-dashed" style="margin-top: 40px; margin-bottom: 30px; height: 2px; background-size: 12px 2px; opacity: 0.5;"></div>
+
+                <h3 style="color: var(--primary-color); margin-bottom: 15px; font-size: 1.3rem;">⚡ 前端技术栈：纯粹的 HTML5 开发</h3>
+                <p style="line-height: 1.8; color: var(--text-color); margin-bottom: 20px;">
+                    基于 <strong>HTML5 + CSS3 + JavaScript</strong> 原生构建，拒绝臃肿依赖。这是一个真正<strong>无需联网、单文件即开即用</strong>的全能刷题神器。无论身处何地，只需一个浏览器即可开启高效备考，实现了极致的轻量化与便捷性。
+                </p>
+                <div class="divider-dashed"></div>
+
+                <h3 style="color: var(--primary-color); margin-bottom: 15px; margin-top: 25px; font-size: 1.3rem;">💾 数据安全：本地存储与文件交互</h3>
+                <p style="line-height: 1.8; color: var(--text-color); margin-bottom: 20px;">
+                    利用浏览器的 <strong>LocalStorage (本地存储)</strong> 技术，实时自动保存做题进度，意外关闭也不怕。结合强大的 <strong>File API</strong>，支持 JSON 格式的无限题库一键导入与数据永久备份导出，让数据完全掌握在用户自己手中。
+                </p>
+                <div class="divider-dashed"></div>
+
+                <h3 style="color: var(--primary-color); margin-bottom: 15px; margin-top: 25px; font-size: 1.3rem;">🎯 学习闭环：智能错题攻坚</h3>
+                <p style="line-height: 1.8; color: var(--text-color); margin-bottom: 20px;">
+                    系统完美集成了“自定义规则抽题”、“全真模拟打分”与“智能错题本”功能。它能自动捕捉并记录用户的薄弱知识点，形成高效的<strong>错题攻坚闭环</strong>，帮助用户在反复练习中查漏补缺。
+                </p>
+
+            </div> <div style="margin-top: 20px; text-align: center;">
+                <a href="projects.html" class="scroll-btn">← 返回项目列表</a>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

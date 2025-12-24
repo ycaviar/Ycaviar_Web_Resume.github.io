@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我 | Yu Zihan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="index.html">主页</a></li>
+                <li><a href="projects.html">项目</a></li>
+                <li><a href="experience.html">经验</a></li>
+                <li><a href="contact.html" class="active">联系</a></li>
+                <li><a href="others.html">其他</a></li>
+            </ul>
+            <div class="theme-control-group">
+                <label class="switch">
+                    <input type="checkbox" id="themeToggleCheckbox">
+                    <span class="slider"></span>
+                </label>
+                <span id="themeIcon" class="theme-icon-display">🌙</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="layout-container">
+        <aside class="sidebar">
+            <div class="profile-card">
+                <img src="YZH.jpg" alt="Yu Zihan Avatar" class="avatar">
+                <h3>Yu Zihan</h3>
+                <p class="signature">“代码编织梦想，数据洞察未来”</p>
+                <div class="divider-dashed"></div>
+                <div class="card-middle">
+                    <p class="music-label">🎵 BGM: Cipher</p>
+                    <audio controls loop src="Cipher.mp3" class="music-player"></audio>
+                </div>
+                <div class="divider-dashed"></div>
+                <div class="card-bottom">
+                    <p>🎓 大连海洋大学</p>
+                    <p>📍 辽宁 · 大连</p>
+                    <p>💻 大数据 24-1</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            
+            <section class="hero-section">
+                <p class="portfolio-tag">CONTACT!</p>
+                <h1 class="hero-title" style="font-size: 3.5rem;">Action speak<br>louder than words</h1>
+                <p class="hero-subtitle">期待与您的每一次交流与合作</p>
+                
+                <button class="scroll-btn" onclick="scrollToContact()">大厂快来联系我吧 ↓</button>
+            </section>
+
+            <div id="contact-area" style="padding-top: 40px;">
+                
+                <section class="contact-info-grid animate-box">
+                    
+                    <div class="content-card">
+                        <h3 style="margin-bottom: 20px; color: var(--primary-color);">即时通讯</h3>
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <span><strong>手机:</strong> 138-xxxx-xxxx</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">💬</span>
+                            <span><strong>微信:</strong> wxid_yuzihan</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🐧</span>
+                            <span><strong>QQ:</strong> 123456789</span>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h3 style="margin-bottom: 20px; color: var(--primary-color);">电子邮箱</h3>
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <span><strong>网易邮箱:</strong> yuzihan@163.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">G</span>
+                            <span><strong>Gmail:</strong> yuzihan@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span><strong>地址:</strong> 辽宁省大连市沙河口区</span>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="section-header animate-box">
+                    <span class="title">留言板</span><span class="line"></span><span class="number">MESSAGE</span>
+                </div>
+
+                <section class="contact-form-card animate-box">
+                    <form onsubmit="return handleFormSubmit(event)">
+                        <div class="form-group">
+                            <input type="text" class="form-input" placeholder="Name (您的称呼)" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-input" placeholder="Email (您的邮箱地址)" required>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea class="form-textarea" placeholder="Message (请输入您的留言内容...)" required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">发送 Send</button>
+                    </form>
+                </section>
+
+                <footer style="margin-top: 40px;"><p>© 2025 Yu Zihan | Contact Me</p></footer>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // 滚动脚本
+        function scrollToContact() {
+            const area = document.getElementById('contact-area');
+            const yOffset = -80; 
+            const y = area.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({top: y, behavior: 'smooth'});
+        }
+
+        // 简单的表单提交模拟脚本
+        function handleFormSubmit(event) {
+            event.preventDefault(); // 阻止页面刷新
+            alert("感谢您的留言！\n由于这是一个静态演示网站，数据暂未发送到服务器。\n请通过上方邮箱直接联系我！");
+        }
+    </script>
+</body>
+</html>

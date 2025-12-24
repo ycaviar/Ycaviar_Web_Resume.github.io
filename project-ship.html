@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>船舶检测 | 项目详情</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="index.html">主页</a></li>
+                <li><a href="projects.html" class="active">项目</a></li>
+                <li><a href="experience.html">经验</a></li>
+                <li><a href="contact.html">联系</a></li>
+                <li><a href="others.html">其他</a></li>
+            </ul>
+            
+            <div class="theme-control-group">
+                <label class="switch">
+                    <input type="checkbox" id="themeToggleCheckbox">
+                    <span class="slider"></span>
+                </label>
+                <span id="themeIcon" class="theme-icon-display">🌙</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="layout-container">
+        
+        <aside class="sidebar">
+            <div class="profile-card">
+                <img src="YZH.jpg" alt="Yu Zihan Avatar" class="avatar">
+                <h3>Yu Zihan</h3>
+                <p class="signature">“代码编织梦想，数据洞察未来”</p>
+                
+                <div class="divider-dashed"></div>
+                
+                <div class="card-middle">
+                    <p class="music-label">🎵 BGM: Cipher</p>
+                    <audio controls loop src="Cipher.mp3" class="music-player"></audio>
+                </div>
+                
+                <div class="divider-dashed"></div>
+                
+                <div class="card-bottom">
+                    <p>🎓 大连海洋大学</p>
+                    <p>📍 辽宁 · 大连</p>
+                    <p>💻 大数据 24-1</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            
+            <div class="glass-detail-card animate-box">
+                
+                <h1 class="detail-title">基于深度学习的检测船舶分类系统</h1>
+                <div class="divider-dashed" style="width: 100px; margin: 0 0 30px 0;"></div>
+                <p style="line-height: 1.8; color: var(--text-color); margin-bottom: 20px;">
+                    利用计算机视觉技术，对海面船舶进行实时检测与分类。该项目基于 YOLO 算法模型，能够有效识别多种船舶类型，适用于港口监控与海上交通管理。
+                </p>
+
+                <div class="detail-media-container">
+                    <video controls class="detail-video">
+                        <source src="基于深度学习的检测船舶分类系统.mp4" type="video/mp4">
+                        您的浏览器不支持视频播放。
+                    </video>
+                </div>
+
+                <div class="divider-dashed" style="margin-top: 40px; margin-bottom: 30px; height: 2px; background-size: 12px 2px; opacity: 0.5;"></div>
+
+                <h3 style="color: var(--primary-color); margin-bottom: 15px; font-size: 1.3rem;">👁️ 核心算法：前沿的 YOLOv8 模型</h3>
+                <p style="line-height: 1.8; color: var(--text-color); margin-bottom: 20px;">
+                    本项目搭载了业界领先的目标检测算法 —— <strong>YOLOv8</strong>。通过对大规模船舶数据集的迁移学习与微调，模型能够在复杂多变的海面环境下，实现毫秒级延迟的实时目标检测，并对多种船舶类别进行高精度分类。
+                </p>
+                <div class="divider-dashed"></div>
+
+                <h3 style="color: var(--primary-color); margin-bottom: 15px; margin-top: 25px; font-size: 1.3rem;">🧠 交互升级：视觉与知识的融合</h3>
+                <p style="line-height: 1.8; color: var(--text-color); margin-bottom: 20px;">
+                    实现了从“看清”到“看懂”的跨越。系统集成了智能 <strong>API 接口</strong>，当视觉模型识别出特定船舶后，用户可即时询问。后台会结合识别结果调用知识库 API，为用户提供关于该船舶种类、用途及相关航海知识的即时科普。
+                </p>
+                <div class="divider-dashed"></div>
+
+                <h3 style="color: var(--primary-color); margin-bottom: 15px; margin-top: 25px; font-size: 1.3rem;">🌐 应用前景：海洋大数据赋能</h3>
+                <p style="line-height: 1.8; color: var(--text-color); margin-bottom: 20px;">
+                    该系统为海洋监管提供了智能化解决方案。可广泛应用于港口自动化作业监控、海上非法船只排查、航道交通流量统计以及航海科普教育等领域，展现了人工智能在海洋大数据时代的广阔应用潜力。
+                </p>
+
+            </div> <div style="margin-top: 20px; text-align: center;">
+                <a href="projects.html" class="scroll-btn">← 返回项目列表</a>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOP助手 | 项目详情</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="index.html">主页</a></li>
+                <li><a href="projects.html" class="active">项目</a></li>
+                <li><a href="experience.html">经验</a></li>
+                <li><a href="contact.html">联系</a></li>
+                <li><a href="others.html">其他</a></li>
+            </ul>
+            
+            <div class="theme-control-group">
+                <label class="switch">
+                    <input type="checkbox" id="themeToggleCheckbox">
+                    <span class="slider"></span>
+                </label>
+                <span id="themeIcon" class="theme-icon-display">🌙</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="layout-container">
+        
+        <aside class="sidebar">
+            <div class="profile-card">
+                <img src="YZH.jpg" alt="Yu Zihan Avatar" class="avatar">
+                <h3>Yu Zihan</h3>
+                <p class="signature">“代码编织梦想，数据洞察未来”</p>
+                
+                <div class="divider-dashed"></div>
+                
+                <div class="card-middle">
+                    <p class="music-label">🎵 BGM: Cipher</p>
+                    <audio controls loop src="Cipher.mp3" class="music-player"></audio>
+                </div>
+                
+                <div class="divider-dashed"></div>
+                
+                <div class="card-bottom">
+                    <p>🎓 大连海洋大学</p>
+                    <p>📍 辽宁 · 大连</p>
+                    <p>💻 大数据 24-1</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            
+            <div class="glass-detail-card animate-box">
+                
+                <h1 class="detail-title">SOP流程通关助手</h1>
+                <div class="divider-dashed" style="width: 100px; margin: 0 0 30px 0;"></div>
+                <p style="line-height: 1.8; color: var(--text-color); margin-bottom: 20px;">
+                    这是一个旨在帮助用户快速熟悉标准化作业流程（SOP）的辅助工具。通过直观的交互设计，用户可以更高效地掌握复杂的业务逻辑。
+                </p>
+
+                <div class="detail-media-container">
+                    <video controls class="detail-video">
+                        <source src="SOP流程通关助手.mp4" type="video/mp4">
+                        您的浏览器不支持视频播放。
+                    </video>
+                </div>
+
+                <h3 style="color: var(--primary-color); margin-top: 50px; margin-bottom: 20px; font-size: 1.3rem;">系统核心界面一览</h3>
+                
+                <div class="detail-media-container" style="margin-top: 0;">
+                    <div>
+                        <p style="margin-bottom:8px; font-weight:bold; color:var(--text-light); font-size: 0.95rem;">1. 系统登录界面</p>
+                        <img src="sop1.jpg" alt="登录界面" class="detail-img">
+                    </div>
+                    
+                    <div>
+                        <p style="margin-bottom:8px; font-weight:bold; color:var(--text-light); font-size: 0.95rem;">2. 探索广场步骤管理与编辑</p>
+                        <img src="sop2.jpg" alt="探索广场界面" class="detail-img">
+                    </div>
+
+                    <div>
+                        <p style="margin-bottom:8px; font-weight:bold; color:var(--text-light); font-size: 0.95rem;">3. SOP步骤执行与通关</p>
+                        <img src="sop3.jpg" alt="步骤执行界面" class="detail-img">
+                    </div>
+
+                    <div>
+                        <p style="margin-bottom:8px; font-weight:bold; color:var(--text-light); font-size: 0.95rem;">4. 历史记录查看与管理</p>
+                        <img src="sop4.jpg" alt="记录管理界面" class="detail-img">
+                    </div>
+                     <div>
+                        <p style="margin-bottom:8px; font-weight:bold; color:var(--text-light); font-size: 0.95rem;">5. 成就档案与能力可视化分析</p>
+                        <img src="sop5.jpg" alt="成就档案界面" class="detail-img">
+                    </div>
+                </div>
+
+
+                <div class="divider-dashed" style="margin-top: 50px; margin-bottom: 30px; height: 2px; background-size: 12px 2px; opacity: 0.5;"></div>
+
+                <h3 style="color: var(--primary-color); margin-bottom: 15px; font-size: 1.3rem;">核心技术架构 Java MySQL</h3>
+                <p style="line-height: 1.8; color: var(--text-color); margin-bottom: 20px;">
+                    本项目后端核心采用稳健的 Java 语言编写，确保了系统在高并发场景下的稳定性。数据持久层连接 MySQL 数据库，结构化存储用户的学习进度、操作日志及问答记录，构建了可靠的数据基石。
+                </p>
+                <div class="divider-dashed"></div>
+
+                <h3 style="color: var(--primary-color); margin-bottom: 15px; margin-top: 25px; font-size: 1.3rem;">AI智能赋能 集成DeepSeek</h3>
+                <p style="line-height: 1.8; color: var(--text-color); margin-bottom: 20px;">
+                    系统集成了先进的 DeepSeek API 大语言模型。当用户在流程学习中遇到疑惑并发起提问时，系统能实时调用 AI 生成精准解答，并将提问回答对自动沉淀至数据库，逐步构建起智能化的 SOP 知识图谱。
+                </p>
+                <div class="divider-dashed"></div>
+
+                <h3 style="color: var(--primary-color); margin-bottom: 15px; margin-top: 25px; font-size: 1.3rem;">交互体验 游戏化通关系统</h3>
+                <p style="line-height: 1.8; color: var(--text-color); margin-bottom: 20px;">
+                    为了摆脱枯燥的学习体验，系统设计了按步骤通关机制。用户必须完成当前步骤的考核才能解锁下一关。后台会自动记录通关次数与表现，并结合成就系统给予反馈奖励，极大提升了用户的学习动力和沉浸感。
+                </p>
+
+            </div> <div style="margin-top: 20px; text-align: center;">
+                <a href="projects.html" class="scroll-btn">← 返回项目列表</a>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
