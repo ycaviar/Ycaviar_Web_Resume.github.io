@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历 | 张三的展示页</title>
+    <style>
+        /* --- 1. CSS 变量定义 (主题管理) --- */
+        :root {
+            /* 浅色模式（默认）变量 */
+            --primary-color: #2563eb;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --card-bg: #ffffff;
+            --nav-bg: rgba(255, 255, 255, 0.9);
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 深色模式变量覆盖 */
+        body.dark-mode {
+            --primary-color: #60a5fa; /* 深色模式下蓝色调亮一点 */
+            --bg-color: #0f172a;      /* 深蓝黑色背景 */
+            --text-color: #e2e8f0;    /* 浅灰文字 */
+            --card-bg: #1e293b;       /* 深色卡片 */
+            --nav-bg: rgba(30, 41, 59, 0.9);
+            --border-color: #334155;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s; /* 主题切换时的平滑过渡 */
+            padding-top: 60px; /* 给固定导航栏留出空间 */
+        }
+
+        /* --- 2. 顶部导航栏样式 --- */
+        nav {
+            position: fixed; /* 固定在顶部 */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: var(--nav-bg);
+            backdrop-filter: blur(10px); /* 磨砂玻璃效果 */
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* 深色模式切换按钮 */
+        .theme-toggle-btn {
+            background: none;
+            border: 2px solid var(--border-color);
+            color: var(--text-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+        }
+
+        .theme-toggle-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* --- 3. 页面主体布局 --- */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0;
+            /* 这里的背景使用了半透明渐变，为了适应深色模式 */
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            background-color: #94a3b8;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+            border: 4px solid var(--card-bg);
+            box-shadow: var(--shadow);
+        }
+
+        /* --- 4. 卡片区域样式 --- */
+        section {
+            background: var(--card-bg);
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color); /* 增加边框让深色模式更有层次 */
+            
+            /* 滚动动画初始状态 */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out, background-color 0.3s;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 锚点定位修正 (防止点击导航跳转后标题被导航栏遮挡) */
+        section[id] {
+            scroll-margin-top: 80px;
+        }
+
+        h2 {
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .item {
+            margin-bottom: 20px;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 15px;
+        }
+        .item:last-child { border-bottom: none; }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap; /* 手机端自动换行 */
+            margin-bottom: 8px;
+        }
+        
+        .item-title { font-weight: bold; font-size: 1.1rem; }
+        .item-date { color: var(--text-color); opacity: 0.7; font-size: 0.9rem; }
+
+        .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skill-tag {
+            background-color: rgba(37, 99, 235, 0.1);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-color);
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#home">主页</a></li>
+            <li><a href="#about">关于</a></li>
+            <li><a href="#projects">项目经验</a></li>
+            <li><a href="#contact">联系</a></li>
+        </ul>
+        <button class="theme-toggle-btn" id="themeToggle">
+            <span>🌙</span> 模式
+        </button>
+    </nav>
+
+    <div class="container">
+        <header id="home">
+            <div class="avatar">JS</div>
+            <h1>张三</h1>
+            <p class="tagline">求职意向：前端开发工程师 / UI设计师</p>
+        </header>
+
+        <section id="about" class="animate-on-scroll">
+            <h2>👤 个人简介</h2>
+            <p>你好！我是一名计算机科学专业的在校大学生。我喜欢探索新的Web技术，从 HTML/CSS 到现代 JavaScript 框架。通过这个网站，你可以看到我的技术栈和项目经历。如果有深色模式的需求，请点击右上角切换！</p>
+        </section>
+
+        <section class="animate-on-scroll">
+            <h2>🛠️ 技能特长</h2>
+            <div class="skills">
+                <span class="skill-tag">HTML5 / CSS3</span>
+                <span class="skill-tag">JavaScript (ES6+)</span>
+                <span class="skill-tag">深色模式适配</span>
+                <span class="skill-tag">响应式布局</span>
+            </div>
+        </section>
+
+        <section id="projects" class="animate-on-scroll">
+            <h2>💼 实习与项目经历</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">个人简历网站 (本站)</span>
+                    <span class="item-date">2025.01</span>
+                </div>
+                <p>独立开发。包含响应式导航栏、滚动动画效果，并实现了 CSS 变量控制的“深色/浅色”主题切换功能。</p>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">前端开发实习生 | 某某科技</span>
+                    <span class="item-date">2024.07 - 2024.09</span>
+                </div>
+                <ul>
+                    <li>负责公司产品落地页的开发。</li>
+                    <li>配合设计师完成 UI 还原，确保多端兼容性。</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact" class="animate-on-scroll">
+            <h2>📧 联系与附件</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">联系方式</span>
+                </div>
+                <p>邮箱: zhangsan@example.com</p>
+                <p>微信: wxid_zhangsan123</p>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">其他</span>
+                </div>
+                <p>欢迎下载我的 PDF 版简历，或扫描二维码访问我的 GitHub 主页。</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2025 张三的简历网站 | HTML • CSS • JavaScript</p>
+        </footer>
+    </div>
+
+    <script>
+        // --- 1. 滚动动画逻辑 ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.animate-on-scroll');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            sections.forEach(section => observer.observe(section));
+
+            // --- 2. 深色模式切换逻辑 ---
+            const toggleBtn = document.getElementById('themeToggle');
+            const body = document.body;
+            const iconSpan = toggleBtn.querySelector('span');
+
+            // 检查是否有保存的偏好
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                body.classList.add('dark-mode');
+                iconSpan.textContent = '☀️';
+            }
+
+            toggleBtn.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                
+                // 判断当前是否是深色模式，切换图标并保存状态
+                if (body.classList.contains('dark-mode')) {
+                    iconSpan.textContent = '☀️'; // 变成太阳图标
+                    localStorage.setItem('theme', 'dark'); // 保存到浏览器缓存
+                } else {
+                    iconSpan.textContent = '🌙'; // 变成月亮图标
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        });
+    </script>
+    <canvas id="rhythm-canvas"></canvas>
+</body>
+</html>

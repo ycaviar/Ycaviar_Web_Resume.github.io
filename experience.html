@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技能与经历 | Yu Zihan</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @media (min-width: 769px) {
+            .span-2-cols { grid-column: span 2; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="index.html">主页</a></li>
+                <li><a href="projects.html">项目</a></li>
+                <li><a href="experience.html" class="active">经验</a></li>
+                <li><a href="contact.html">联系</a></li>
+                <li><a href="others.html">其他</a></li>
+            </ul>
+            <div class="theme-control-group">
+                <label class="switch">
+                    <input type="checkbox" id="themeToggleCheckbox">
+                    <span class="slider"></span>
+                </label>
+                <span id="themeIcon" class="theme-icon-display">🌙</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="layout-container">
+        <aside class="sidebar">
+            
+            <div class="sidebar-card animate-box">
+                <img src="YZH.jpg" alt="Yu Zihan Avatar" class="avatar">
+                <h3>Yu Zihan</h3>
+                <p class="signature">“代码编织梦想，数据洞察未来”</p>
+            </div>
+
+            <div class="sidebar-card animate-box">
+                <p class="music-label" style="text-align: center; margin-bottom: 10px;">
+                    🎵 BGM: Cipher
+                </p>
+                <audio controls loop src="Cipher.mp3" class="music-player"></audio>
+            </div>
+
+            <div class="sidebar-card animate-box">
+                <div class="info-row">
+                    <span>🎓</span> <span>大连海洋大学</span>
+                </div>
+                <div class="info-row">
+                    <span>📍</span> <span>辽宁 · 大连</span>
+                </div>
+                <div class="info-row">
+                    <span>💻</span> <span>大数据 24-1</span>
+                </div>
+            </div>
+
+        </aside>
+
+        <main class="content-area">
+            
+            <section class="hero-section">
+                <p class="portfolio-tag">RESUME!</p>
+                <h1 class="hero-title" style="font-size: 3.2rem;">There is no royal<br>road to learning</h1>
+                <p class="hero-subtitle">持续学习，不断精进</p>
+                <button class="scroll-btn" onclick="scrollToSkills()">了解一下我的技能吧 ↓</button>
+            </section>
+
+            <div id="skills-area" style="padding-top: 40px;">
+                
+                <section class="skill-group-grid">
+                    <div class="content-card animate-box">
+                        <h3 style="margin-bottom: 20px;">前端开发</h3>
+                        <div class="skill-bar-item">
+                            <div class="skill-info"><span>HTML5 / CSS3</span><span>90%</span></div>
+                            <div class="progress-track"><div class="progress-fill" style="--w: 90%;"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info"><span>JavaScript (ES6+)</span><span>85%</span></div>
+                            <div class="progress-track"><div class="progress-fill" style="--w: 85%;"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info"><span>Vue.js</span><span>75%</span></div>
+                            <div class="progress-track"><div class="progress-fill" style="--w: 75%;"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="content-card animate-box">
+                        <h3 style="margin-bottom: 20px;">后端基础</h3>
+                        <div class="skill-bar-item">
+                            <div class="skill-info"><span>Java (Spring Boot)</span><span>80%</span></div>
+                            <div class="progress-track"><div class="progress-fill" style="--w: 80%;"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info"><span>MySQL</span><span>85%</span></div>
+                            <div class="progress-track"><div class="progress-fill" style="--w: 85%;"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info"><span>API 接口设计</span><span>70%</span></div>
+                            <div class="progress-track"><div class="progress-fill" style="--w: 70%;"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="content-card animate-box">
+                        <h3 style="margin-bottom: 20px;">数据分析</h3>
+                        <div class="skill-bar-item">
+                            <div class="skill-info"><span>Python</span><span>88%</span></div>
+                            <div class="progress-track"><div class="progress-fill" style="--w: 88%;"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info"><span>Pandas / Numpy</span><span>80%</span></div>
+                            <div class="progress-track"><div class="progress-fill" style="--w: 80%;"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info"><span>Matplotlib</span><span>75%</span></div>
+                            <div class="progress-track"><div class="progress-fill" style="--w: 75%;"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="content-card animate-box">
+                        <h3 style="margin-bottom: 20px;">人工智能</h3>
+                        <div class="skill-bar-item">
+                            <div class="skill-info"><span>YOLOv8</span><span>85%</span></div>
+                            <div class="progress-track"><div class="progress-fill" style="--w: 85%;"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info"><span>PyTorch</span><span>70%</span></div>
+                            <div class="progress-track"><div class="progress-fill" style="--w: 70%;"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info"><span>OpenCV</span><span>75%</span></div>
+                            <div class="progress-track"><div class="progress-fill" style="--w: 75%;"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="content-card animate-box">
+                        <h3 style="margin-bottom: 20px;">开发工具</h3>
+                        <div class="skill-bar-item">
+                            <div class="skill-info"><span>Git / GitHub</span><span>85%</span></div>
+                            <div class="progress-track"><div class="progress-fill" style="--w: 85%;"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info"><span>Linux 基础命令</span><span>70%</span></div>
+                            <div class="progress-track"><div class="progress-fill" style="--w: 70%;"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info"><span>VS Code / IDEA</span><span>95%</span></div>
+                            <div class="progress-track"><div class="progress-fill" style="--w: 95%;"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="content-card animate-box">
+                        <h3 style="margin-bottom: 20px;">设计能力</h3>
+                        <div class="skill-bar-item">
+                            <div class="skill-info"><span>Figma / UI Design</span><span>75%</span></div>
+                            <div class="progress-track"><div class="progress-fill" style="--w: 75%;"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info"><span>Photoshop</span><span>60%</span></div>
+                            <div class="progress-track"><div class="progress-fill" style="--w: 60%;"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info"><span>视频剪辑 (Pr)</span><span>65%</span></div>
+                            <div class="progress-track"><div class="progress-fill" style="--w: 65%;"></div></div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="section-header animate-box">
+                    <span class="title">其他技能</span><span class="line"></span><span class="number">02</span>
+                </div>
+
+                <section class="office-grid animate-box">
+                    <div class="content-card office-item">
+                        <div class="office-icon">W</div>
+                        <div><strong>Microsoft Word</strong><br><span style="font-size:0.8rem; color:var(--text-light)">文档排版专家</span></div>
+                    </div>
+                    <div class="content-card office-item">
+                        <div class="office-icon">X</div>
+                        <div><strong>Microsoft Excel</strong><br><span style="font-size:0.8rem; color:var(--text-light)">数据透视表</span></div>
+                    </div>
+                    <div class="content-card office-item">
+                        <div class="office-icon">P</div>
+                        <div><strong>PowerPoint</strong><br><span style="font-size:0.8rem; color:var(--text-light)">演示文稿设计</span></div>
+                    </div>
+                    <div class="content-card office-item">
+                        <div class="office-icon">🧠</div>
+                        <div><strong>XMind</strong><br><span style="font-size:0.8rem; color:var(--text-light)">思维导图绘制</span></div>
+                    </div>
+                    <div class="content-card office-item">
+                        <div class="office-icon">📓</div>
+                        <div><strong>Obsidian</strong><br><span style="font-size:0.8rem; color:var(--text-light)">双链笔记管理</span></div>
+                    </div>
+                </section>
+
+                <div class="section-header animate-box">
+                    <span class="title">工作经历</span><span class="line"></span><span class="number">03</span>
+                </div>
+
+                <section class="timeline-container">
+                    
+                    <div class="timeline-card animate-box span-2-cols">
+                        <span class="time-badge">2024.09 - 至今</span>
+                        <h3>实验室科研助理</h3>
+                        <p class="org-name">大连海洋大学 · 计算机视觉实验室</p>
+                        <div class="divider-dashed"></div>
+                        <p class="timeline-desc">
+                            负责“基于深度学习的检测船舶分类系统”的数据集清洗与模型训练。协助导师完成 YOLOv8 算法的调优，将检测准确率提升至 92% 以上。主导撰写了实验报告与技术文档，并协助团队进行代码的 Git 版本管理。
+                        </p>
+                    </div>
+
+                    <div class="timeline-card animate-box">
+                        <span class="time-badge">2023.09 - 2024.06</span>
+                        <h3>技术部干事</h3>
+                        <p class="org-name">校学生会</p>
+                        <p class="timeline-desc">
+                            参与校园活动的技术支持工作。主导了“校园十佳歌手”线上投票页面的开发（HTML/CSS），访问量突破 5000+。
+                        </p>
+                    </div>
+
+                    <div class="timeline-card animate-box">
+                        <span class="time-badge">2022.09 - 2023.01</span>
+                        <h3>编程启蒙与自学</h3>
+                        <p class="org-name">自学阶段</p>
+                        <p class="timeline-desc">
+                            利用课余时间系统学习 Python 基础与网络爬虫。独立编写了“天气自动提醒脚本”和“B站弹幕抓取工具”。
+                        </p>
+                    </div>
+
+                    <div class="timeline-card animate-box">
+                        <span class="time-badge">2018 - 2021</span>
+                        <h3>高中科技社团成员</h3>
+                        <p class="org-name">科技创新社</p>
+                        <p class="timeline-desc">
+                            高中时期加入科技社团，首次接触 Arduino 硬件编程。参与制作了“智能浇花系统”，获得校级科技节二等奖。
+                        </p>
+                    </div>
+
+                </section>
+
+                <footer style="margin-top: 40px;"><p>© 2025 Yu Zihan | Resume & Experience</p></footer>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function scrollToSkills() {
+            const area = document.getElementById('skills-area');
+            const yOffset = -80; 
+            const y = area.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({top: y, behavior: 'smooth'});
+        }
+    </script>
+    <div id="left-line"></div>
+</body>
+</html>

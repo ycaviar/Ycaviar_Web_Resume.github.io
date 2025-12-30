@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生活瞬间 | Yu Zihan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="index.html">主页</a></li>
+                <li><a href="projects.html">项目</a></li>
+                <li><a href="experience.html">经验</a></li>
+                <li><a href="contact.html">联系</a></li>
+                <li><a href="others.html" class="active">其他</a></li>
+            </ul>
+            <div class="theme-control-group">
+                <label class="switch">
+                    <input type="checkbox" id="themeToggleCheckbox">
+                    <span class="slider"></span>
+                </label>
+                <span id="themeIcon" class="theme-icon-display">🌙</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="single-column-container" style="padding-top: 40px;">
+
+        <section class="animate-box" style="text-align: center; padding: 60px 0 40px;">
+            <p class="portfolio-tag">PHOTO</p>
+            <h1 class="hero-title" style="font-size: 3.5rem; margin-bottom: 25px;">
+                Life is like a<br>box of chocolates
+            </h1>
+            <button class="scroll-btn" onclick="scrollToPhotos()">生活就像块巧克力 ↓</button>
+        </section>
+
+        <div id="photo-content-area">
+            
+            <section class="category-grid animate-box">
+                <div class="content-card category-card-text">
+                    <span class="cat-en">SPORTS</span>
+                    <div class="divider-dashed" style="width: 40px; margin: 10px 0;"></div>
+                    <span class="cat-cn">运动</span>
+                </div>
+                <div class="content-card category-card-text">
+                    <span class="cat-en">FOOD</span>
+                    <div class="divider-dashed" style="width: 40px; margin: 10px 0;"></div>
+                    <span class="cat-cn">美食</span>
+                </div>
+                <div class="content-card category-card-text">
+                    <span class="cat-en">TRAVEL</span>
+                    <div class="divider-dashed" style="width: 40px; margin: 10px 0;"></div>
+                    <span class="cat-cn">旅行</span>
+                </div>
+            </section>
+
+            <div class="section-header animate-box" style="margin-top: 60px;">
+                <span class="title">生活精彩瞬间</span><span class="line"></span><span class="number">02</span>
+            </div>
+
+            <section class="photo-grid animate-box">
+                <div class="photo-item"><img src="美食1.jpg" alt="美食1" class="photo-img"></div>
+                <div class="photo-item"><img src="美食2.jpg" alt="美食2" class="photo-img"></div>
+                <div class="photo-item"><img src="美食3.jpg" alt="美食3" class="photo-img"></div>
+                
+                <div class="photo-item"><img src="风景1.jpg" alt="风景1" class="photo-img"></div>
+                <div class="photo-item"><img src="风景2.jpg" alt="风景2" class="photo-img"></div>
+                <div class="photo-item"><img src="风景3.jpg" alt="风景3" class="photo-img"></div>
+            </section>
+
+            <footer style="margin-top: 60px; text-align: center; color: var(--text-light);">
+                <p>© 2025 Yu Zihan | Life & Photography</p>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function scrollToPhotos() {
+            const area = document.getElementById('photo-content-area');
+            const yOffset = -80; 
+            const y = area.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({top: y, behavior: 'smooth'});
+        }
+    </script>
+    
+</body>
+</html>

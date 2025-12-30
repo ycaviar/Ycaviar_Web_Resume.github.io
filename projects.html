@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目展示 | Yu Zihan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="index.html">主页</a></li>
+                <li><a href="projects.html" class="active">项目</a></li>
+                <li><a href="experience.html">经验</a></li>
+                <li><a href="contact.html">联系</a></li>
+                <li><a href="others.html">其他</a></li>
+            </ul>
+            <div class="theme-control-group">
+                <label class="switch">
+                    <input type="checkbox" id="themeToggleCheckbox">
+                    <span class="slider"></span>
+                </label>
+                <span id="themeIcon" class="theme-icon-display">🌙</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="layout-container">
+        <aside class="sidebar">
+            
+            <div class="sidebar-card animate-box">
+                <img src="YZH.jpg" alt="Yu Zihan Avatar" class="avatar">
+                <h3>Yu Zihan</h3>
+                <p class="signature">“代码编织梦想，数据洞察未来”</p>
+            </div>
+
+            <div class="sidebar-card animate-box">
+                <p class="music-label" style="text-align: center; margin-bottom: 10px;">
+                    🎵 BGM: Cipher
+                </p>
+                <audio controls loop src="Cipher.mp3" class="music-player"></audio>
+            </div>
+
+            <div class="sidebar-card animate-box">
+                <div class="info-row">
+                    <span>🎓</span> <span>大连海洋大学</span>
+                </div>
+                <div class="info-row">
+                    <span>📍</span> <span>辽宁 · 大连</span>
+                </div>
+                <div class="info-row">
+                    <span>💻</span> <span>大数据 24-1</span>
+                </div>
+            </div>
+
+        </aside>
+
+        <main class="content-area">
+            <section class="hero-section">
+                <p class="portfolio-tag">PORTFOLIO!</p>
+                <h1 class="hero-title" style="font-size: 3.5rem;">Get minds<br>have purpose</h1>
+                <p class="hero-subtitle">在这里查看我的实践成果</p>
+                <button class="scroll-btn" onclick="scrollToGallery()">了解一下这些项目吧 ↓</button>
+            </section>
+
+            <div id="project-gallery-area" style="padding-top: 40px;">
+                <section class="project-gallery animate-box">
+                    
+                    <div class="project-item" onclick="saveScrollAndGo('project-sop.html')">
+                        <img src="SOP主界面.jpg" alt="SOP界面" class="project-thumb">
+                        <div class="project-overlay">SOP流程通关助手</div>
+                    </div>
+
+                    <div class="project-item" onclick="saveScrollAndGo('project-mayuan.html')">
+                        <img src="马原考试系统界面.jpg" alt="马原界面" class="project-thumb">
+                        <div class="project-overlay">马原考试系统</div>
+                    </div>
+
+                    <div class="project-item" onclick="saveScrollAndGo('project-ship.html')">
+                        <img src="基于深度学习的检测船舶分类系统.jpg" alt="船舶检测" class="project-thumb">
+                        <div class="project-overlay">基于深度学习的检测船舶分类系统</div>
+                    </div>
+
+                </section>
+                
+                <footer><p>© 2025 Yu Zihan | Projects Portfolio</p></footer>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <script>
+        // 1. 向下滚动的动画
+        function scrollToGallery() {
+            const gallery = document.getElementById('project-gallery-area');
+            const yOffset = -80; 
+            const y = gallery.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({top: y, behavior: 'smooth'});
+        }
+
+        // 2. 跳转前保存当前位置 (新功能)
+        function saveScrollAndGo(url) {
+            // 将当前的滚动高度保存到 SessionStorage 中，key 为 'projectsScrollY'
+            sessionStorage.setItem('projectsScrollY', window.scrollY);
+            // 跳转页面
+            window.location.href = url;
+        }
+
+        // 3. 页面加载时恢复位置 (新功能)
+        document.addEventListener("DOMContentLoaded", function() {
+            // 检查是否有保存的滚动位置
+            const savedScrollY = sessionStorage.getItem('projectsScrollY');
+            
+            if (savedScrollY) {
+                // 如果有，立即滚过去（使用 instant 瞬间到达，避免看着头晕）
+                window.scrollTo({
+                    top: parseInt(savedScrollY),
+                    behavior: 'instant' 
+                });
+                
+                // 重要：恢复完后清除记录，防止刷新页面时也莫名其妙往下滚
+                sessionStorage.removeItem('projectsScrollY');
+            }
+        });
+    </script>
+    <div id="left-line"></div>
+    
+
+    <div id="geo-man">
+        <div class="man-body">
+            <div class="man-head">
+                <div class="man-eye left-eye">
+                    <div class="pupil"></div>
+                </div>
+                <div class="man-eye right-eye">
+                    <div class="pupil"></div>
+                </div>
+            </div>
+            <div class="man-torso"></div>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
